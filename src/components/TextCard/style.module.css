@@ -10,3 +10,11 @@ padding: 20px;
     display: flex;
     justify-content: space-between;
 }
+
+.text_content{
+overflow: hidden;
+text-overflow: ellipsis;
+-webkit-line-clamp: 6;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+}

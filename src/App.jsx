@@ -4,7 +4,7 @@ import { Header } from "./components/Header/Header";
 import { NoteAPI } from "api/note-api";
 import { useDispatch } from "react-redux";
 import { setNoteList } from "store/note/note-slice";
-import { NoteBrowse } from "pages/NoteBrowse/NoteBrowse";
+//import { NoteBrowse } from "pages/NoteBrowse/NoteBrowse";
 
 export function App() {
   const dispatch = useDispatch();

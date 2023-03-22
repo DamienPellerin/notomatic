@@ -1,28 +1,10 @@
 {
   "notes": [
     {
-      "title": "React - Props",
-      "content": "Props are data I can send to a component. You can send any kind of data : Objects, strings, numbers, arrays, jsx...\nYou can never modify a props directly they are read-only. Any time a component props changes the component re-render.\n\nExample : \n\n<Component myProps=\"This is a props\" />",
-      "created_at": "23/08/2022",
-      "id": 2
-    },
-    {
-      "title": "React - States",
-      "content": "A state is a data managed by a component. Any time a component state changes the component re-render",
-      "created_at": "23/08/2022",
-      "id": 5
-    },
-    {
       "title": "React - Hooks",
       "content": "Hooks are function that let you use states and other React features. \n\nuseEffect() and useState() are two famous React hooks. ",
       "created_at": "23/08/2022",
       "id": 6
-    },
-    {
-      "title": "React - useEffect() ",
-      "content": "The function passed to useEffect will run after the first render is committed to the screen.\nYou can pass an array as second parameter. useEffect() will run anytime a value in this array change.\nYou can return a function in useEffect() that will be executed when the component is removed from the DOM\n\nExample\n\nuseEffect( () => {\n   console.log(\"Run on first render\")\n}, [])\n\nuseEffect( () => {\n   console.log(\"Run on first render and when valueToListen changes\")\n}, [valueToListen])\n\nuseEffect( () => {\n   console.log(\"Run on first render\")\n   return () =>{\n        console.log(\"Run when component is removed from the DOM\")\n    }\n}, [])",
-      "created_at": "23/08/2022",
-      "id": 8
     },
     {
       "title": "React - useState()",
@@ -43,28 +25,10 @@
       "id": 11
     },
     {
-      "title": "fsdfdsfc",
-      "content": "dvdsfdsfdsfds",
-      "created_at": "22/03/2023 12:36:17",
+      "title": "aaaaaaa",
+      "content": "aaaaaaaaaaaaaaa",
+      "created_at": "22/03/2023 18:55:40",
       "id": 12
-    },
-    {
-      "title": "",
-      "content": "",
-      "created_at": "22/03/2023 12:36:23",
-      "id": 13
-    },
-    {
-      "title": "",
-      "content": "",
-      "created_at": "22/03/2023 14:24:51",
-      "id": 14
-    },
-    {
-      "title": "ccx ",
-      "content": "c dsdscd",
-      "created_at": "22/03/2023 14:51:43",
-      "id": 15
     }
   ]
 }

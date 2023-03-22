@@ -1,5 +1,5 @@
 import s from "./style.module.css";
-function ButtonPrimary({ children, onClick }) {
+export function ButtonPrimary({ children, onClick }) {
   return (
     <button
       onClick={onClick}

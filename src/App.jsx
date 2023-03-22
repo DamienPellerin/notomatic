@@ -4,6 +4,7 @@ import { Header } from "./components/Header/Header";
 import { NoteAPI } from "api/note-api";
 import { useDispatch } from "react-redux";
 import { setNoteList } from "store/note/note-slice";
+import s from "./style.module.css";
 //import { NoteBrowse } from "pages/NoteBrowse/NoteBrowse";
 
 export function App() {
@@ -20,8 +21,9 @@ export function App() {
   return (
     <div className="container-fluid">
       <Header />
-
-      <Outlet />
+      <div className={s.outlet_container}>
+        <Outlet />
+      </div>
     </div>
   );
 }

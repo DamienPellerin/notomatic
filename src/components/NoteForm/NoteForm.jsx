@@ -1,8 +1,8 @@
 import s from "./style.module.css";
 import { PencilFill, TrashFill } from "react-bootstrap-icons";
 import { ButtonPrimary } from "components/ButtonPrimary/ButtonPrimary";
-import { useState } from "react";
-import { ValidatorService } from "services/form-validator";
+import { useEffect, useState } from "react";
+import { ValidatorService } from "services/form-validators";
 import { FieldError } from "components/FieldError/FieldError";
 import { noteReducer } from "store/note/note-slice";
 
@@ -27,7 +27,6 @@ export function NoteForm({
     title: note?.title || "",
     content: note?.content || "",
   });
-
   const [formErrors, setFormErrors] = useState({
     title: note?.title ? undefined : "",
     content: note?.content ? undefined : "",
@@ -36,21 +35,20 @@ export function NoteForm({
   function hasError() {
     return Object.values(formErrors).some((error) => error !== undefined);
   }
-
   function updateFormValues(e) {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
     validate(e.target.name, e.target.value);
   }
 
-  console.log(formErrors);
-
-  function validate(fieldName, fieldValue) {
-    setFormErrors({
-      ...formErrors,
-      [fieldName]: VALIDATORS[fieldName](fieldValue),
-    });
+  function validate(fieldName, fieldValue, done) {
+    setFormErrors(
+      {
+        ...formErrors,
+        [fieldName]: VALIDATORS[fieldName](fieldValue),
+      },
+      done
+    );
   }
-
   const actionIcons = (
     <>
       <div className="col-1">
@@ -86,8 +84,8 @@ export function NoteForm({
         type="text"
         name="content"
         className="form-control"
+        row="5"
         value={formValues.content}
-        rows="5"
       />
       <FieldError msg={formErrors.content} />
     </div>
@@ -103,6 +101,7 @@ export function NoteForm({
       </ButtonPrimary>
     </div>
   );
+
   return (
     <form className={s.container}>
       <div className="row justify-content-space-between">
@@ -114,7 +113,6 @@ export function NoteForm({
       <div className={`mb-3 ${s.title_input_container}`}>
         {isEditable && titleInput}
       </div>
-
       <div className="mb-3">
         {isEditable ? contentInput : <pre>{note.content}</pre>}
       </div>
